@@ -10,26 +10,65 @@
             text-align: center;
             text-decoration: underline;
         }
+
         .app-container {
-            height:200px;
+            height: 200px;
             width: 300px;
             margin: 100px auto;
-            border:2px solid black;
+            background-color: rgb(253, 104, 104);
+            border: 2px solid black;
         }
-        .img-light{
+
+        .img-light {
             height: 100px;
             margin-left: 100px;
-            margin-top:50px;
+            margin-top: 50px;
+        }
+
+        .bg-light {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .bg-dark {
+            background-color: #1a1a1a;
+            color: white;
         }
     </style>
 </head>
 
-<body>
+<body class="bg-light" id="main-body">
     <h1 class="heading">THEME SWITCHER</h1>
     <div class="app-container">
-        <img src="/off-button.png" class="img-light" id="img-light">
+        <img src="/off-button.png" class="img-light" id="img-light" onclick="toggle()">
     </div>
     <script>
+        function toggle() {
+            const switchelement = document.getElementById("img-light")
+
+            if (switchelement.src.includes("off-button.png")) {
+                switchelement.src = "switch.png";
+                enableDark();
+
+            }
+            else {
+                switchelement.src = "off-button.png";
+                enablelight();
+
+            }
+
+        }
+        function enableDark() {
+            const mainBody = document.getElementById("main-body")
+            mainBody.classList.remove("bg-light")
+            mainBody.classList.add("bg-dark")
+        }
+        function enablelight() {
+            const mainBody = document.getElementById("main-body")
+            mainBody.classList.remove("bg-dark")
+            mainBody.classList.add("bg-light")
+        }
+
 
     </script>
 </body>

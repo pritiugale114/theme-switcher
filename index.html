@@ -6,16 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THEME SWITCHER</title>
     <style>
-        .heading {}
-
-        .app-container {}
+        .heading {
+            text-align: center;
+            text-decoration: underline;
+        }
+        .app-container {
+            height:200px;
+            width: 300px;
+            margin: 100px auto;
+            border:2px solid black;
+        }
+        .img-light{
+            height: 100px;
+            margin-left: 100px;
+            margin-top:50px;
+        }
     </style>
 </head>
 
 <body>
     <h1 class="heading">THEME SWITCHER</h1>
     <div class="app-container">
-        <img src="/off-button.png" class="img-light">
+        <img src="/off-button.png" class="img-light" id="img-light">
     </div>
     <script>
 
